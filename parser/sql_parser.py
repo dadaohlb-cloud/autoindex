@@ -16,7 +16,7 @@ def parse_sql(sql: str):
     order_cols = []
     group_cols = []
     select_cols = []
-
+    has_select_star = False
     alias_to_table = {}
     column_to_tables = {}
 

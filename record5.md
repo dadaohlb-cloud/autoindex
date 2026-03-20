@@ -108,3 +108,5 @@ SELECT 'DROP INDEX IF EXISTS ' || indexname || ';'
 FROM pg_indexes
 WHERE schemaname = 'public'
   AND indexname LIKE 'idx_%';
+
+SELECT pg_terminate_backend(18536);

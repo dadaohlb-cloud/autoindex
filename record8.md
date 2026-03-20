@@ -110,21 +110,3 @@ python -m scripts.run_btree_only
 python -m scripts.benchmark_queries
 python -m scripts.export_results
 cat output/benchmarks/benchmark_summary.csv
-九、你下一步会得到什么
-
-如果一切正常，你的论文核心结果表会变成这样：
-
-method	total_exec_time	speedup_vs_no_index	reduction_ratio
-No Index	3.99	1.00	0.00
-BTree Only	x.xx	x.xx	x.xx
-Hybrid	3.33	1.20	0.166
-
-然后你就可以真正回答论文的核心问题：
-
-和无索引比，自动推荐方法能不能提速？
-
-和只选 B+Tree 比，混合索引值不值得？
-
-这一步做完，你的实验体系就基本成型了。
-
-把 benchmark_summary.csv 的新内容贴给我，我下一条继续带你做最后一步：自动生成论文图表。

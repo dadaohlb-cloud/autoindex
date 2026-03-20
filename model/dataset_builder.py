@@ -432,7 +432,14 @@ def build_dataset(
                         frequency=1.0,
                         selectivity=1.0
                     )
-                    inf = build_index_feature(candidate, fiting_model_size=fiting_model_size)
+                    # inf = build_index_feature(candidate, fiting_model_size=fiting_model_size)
+                    inf = build_index_feature(
+                        candidate=candidate,
+                        fiting_model_size=fiting_model_size,
+                        conn=conn,
+                        parsed_query=parsed_query,
+                    )
+                    print(f"[DEBUG] index features for candidate {cid}: {inf}")
                     xf = build_interaction_feature(parsed_query, candidate)
                     merged = merge_features(qf, inf, xf)
 
