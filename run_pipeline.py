@@ -14,7 +14,7 @@ def main():
     build_dataset(
         workload_path=train_workload,
         output_csv="output/train.csv",
-        freq_threshold=0.1,
+        freq_threshold=0.05,
         max_width=3,
         max_candidates_per_query=5,
         repeat=2

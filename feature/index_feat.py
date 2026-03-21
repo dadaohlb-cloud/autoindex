@@ -1,4 +1,5 @@
 from __future__ import annotations
+import re
 from typing import Dict, Iterable, Optional
 from feature.stats import summarize_index_columns
 
@@ -13,12 +14,18 @@ def estimate_key_position_mean(columns: Iterable[str]) -> float:
     return float(sum(positions) / len(positions))
 
 def estimate_covering_feature(parsed_query: Optional[dict], candidate: dict) -> float:
-    """
-    是否覆盖查询所需列。
-    """
     if not parsed_query:
         return 0.0
-    required_cols = set(parsed_query.get("select_cols", []))
+    if parsed_query.get("select_star", False):
+        return 0.0
+    select_cols = set(parsed_query.get("select_cols", []))
+    if "*" in select_cols:
+        return 0.0
+    raw_sql = parsed_query.get("raw_sql", "")
+    if raw_sql and re.search(r"select\s+(distinct\s+)?(\w+\.)?\*", raw_sql, re.IGNORECASE):
+        return 0.0
+    required_cols = set()
+    required_cols |= select_cols
     required_cols |= set(parsed_query.get("where_cols", []))
     required_cols |= set(parsed_query.get("join_cols", []))
     required_cols |= set(parsed_query.get("order_cols", []))

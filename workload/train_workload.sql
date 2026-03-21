@@ -1,120 +1,29 @@
 SELECT * FROM lineitem WHERE l_orderkey = 20000;
-SELECT * FROM lineitem WHERE l_orderkey = 10;
-SELECT * FROM lineitem WHERE l_orderkey = 10;
-SELECT * FROM lineitem WHERE l_orderkey = 20000;
-SELECT * FROM lineitem WHERE l_orderkey = 1000;
-SELECT * FROM lineitem WHERE l_orderkey = 100;
-SELECT * FROM lineitem WHERE l_orderkey = 100;
-SELECT * FROM lineitem WHERE l_orderkey = 100;
-SELECT * FROM lineitem WHERE l_orderkey = 20000;
-SELECT * FROM lineitem WHERE l_orderkey = 10;
-SELECT * FROM lineitem WHERE l_orderkey = 20000;
-SELECT * FROM lineitem WHERE l_orderkey = 20000;
-SELECT * FROM lineitem WHERE l_orderkey = 10000;
-SELECT * FROM lineitem WHERE l_orderkey = 10;
-SELECT * FROM lineitem WHERE l_orderkey = 10000;
-SELECT * FROM lineitem WHERE l_orderkey = 5000;
-SELECT * FROM lineitem WHERE l_orderkey = 10;
-SELECT * FROM lineitem WHERE l_orderkey = 10;
-SELECT * FROM lineitem WHERE l_orderkey = 10;
-SELECT * FROM lineitem WHERE l_orderkey = 100;
-SELECT * FROM lineitem WHERE l_orderkey = 100;
-SELECT * FROM lineitem WHERE l_orderkey = 10000;
-SELECT * FROM lineitem WHERE l_orderkey = 10000;
-SELECT * FROM lineitem WHERE l_orderkey = 10;
-SELECT * FROM lineitem WHERE l_orderkey = 10000;
-SELECT * FROM lineitem WHERE l_orderkey = 100;
-SELECT * FROM lineitem WHERE l_orderkey = 20000;
-SELECT * FROM lineitem WHERE l_orderkey = 20000;
-SELECT * FROM lineitem WHERE l_orderkey = 20000;
-SELECT * FROM lineitem WHERE l_orderkey = 10000;
-SELECT * FROM lineitem WHERE l_orderkey = 5000;
-SELECT * FROM lineitem WHERE l_orderkey = 100;
-SELECT * FROM lineitem WHERE l_orderkey = 5000;
-SELECT * FROM lineitem WHERE l_orderkey = 10000;
-SELECT * FROM lineitem WHERE l_orderkey = 1000;
-SELECT * FROM lineitem WHERE l_orderkey = 50000;
-SELECT * FROM lineitem WHERE l_orderkey = 50000;
-SELECT * FROM lineitem WHERE l_orderkey = 10;
-SELECT * FROM lineitem WHERE l_orderkey = 50000;
-SELECT * FROM lineitem WHERE l_orderkey = 50000;
-SELECT * FROM orders WHERE o_custkey = 500 ORDER BY o_orderdate;
-SELECT * FROM orders WHERE o_custkey = 10000 ORDER BY o_orderdate;
-SELECT * FROM orders WHERE o_custkey = 2000 ORDER BY o_orderdate;
-SELECT * FROM orders WHERE o_custkey = 1000 ORDER BY o_orderdate;
-SELECT * FROM orders WHERE o_custkey = 1000 ORDER BY o_orderdate;
-SELECT * FROM orders WHERE o_custkey = 500 ORDER BY o_orderdate;
-SELECT * FROM orders WHERE o_custkey = 500 ORDER BY o_orderdate;
-SELECT * FROM orders WHERE o_custkey = 20000 ORDER BY o_orderdate;
-SELECT * FROM orders WHERE o_custkey = 1000 ORDER BY o_orderdate;
-SELECT * FROM orders WHERE o_custkey = 100 ORDER BY o_orderdate;
-SELECT * FROM orders WHERE o_custkey = 100 ORDER BY o_orderdate;
-SELECT * FROM orders WHERE o_custkey = 2000 ORDER BY o_orderdate;
-SELECT * FROM orders WHERE o_custkey = 100 ORDER BY o_orderdate;
-SELECT * FROM orders WHERE o_custkey = 1000 ORDER BY o_orderdate;
-SELECT * FROM orders WHERE o_custkey = 20000 ORDER BY o_orderdate;
-SELECT * FROM orders WHERE o_custkey = 1000 ORDER BY o_orderdate;
-SELECT * FROM orders WHERE o_custkey = 5000 ORDER BY o_orderdate;
-SELECT * FROM orders WHERE o_custkey = 1000 ORDER BY o_orderdate;
-SELECT * FROM orders WHERE o_custkey = 20000 ORDER BY o_orderdate;
-SELECT * FROM orders WHERE o_custkey = 100 ORDER BY o_orderdate;
-SELECT * FROM orders WHERE o_custkey = 10000 ORDER BY o_orderdate;
-SELECT * FROM orders WHERE o_custkey = 2000 ORDER BY o_orderdate;
-SELECT * FROM orders WHERE o_custkey = 5000 ORDER BY o_orderdate;
-SELECT * FROM orders WHERE o_custkey = 100 ORDER BY o_orderdate;
-SELECT * FROM orders WHERE o_custkey = 2000 ORDER BY o_orderdate;
-SELECT * FROM orders WHERE o_custkey = 100 ORDER BY o_orderdate;
-SELECT * FROM orders WHERE o_custkey = 5000 ORDER BY o_orderdate;
-SELECT * FROM orders WHERE o_custkey = 1000 ORDER BY o_orderdate;
-SELECT * FROM orders WHERE o_custkey = 20000 ORDER BY o_orderdate;
-SELECT * FROM orders WHERE o_custkey = 10000 ORDER BY o_orderdate;
-SELECT l_partkey, COUNT(*) FROM lineitem WHERE l_quantity > 25 GROUP BY l_partkey ORDER BY l_partkey;
-SELECT l_partkey, COUNT(*) FROM lineitem WHERE l_quantity > 35 GROUP BY l_partkey ORDER BY l_partkey;
-SELECT l_partkey, COUNT(*) FROM lineitem WHERE l_quantity > 15 GROUP BY l_partkey ORDER BY l_partkey;
-SELECT l_partkey, COUNT(*) FROM lineitem WHERE l_quantity > 25 GROUP BY l_partkey ORDER BY l_partkey;
-SELECT l_partkey, COUNT(*) FROM lineitem WHERE l_quantity > 10 GROUP BY l_partkey ORDER BY l_partkey;
-SELECT l_partkey, COUNT(*) FROM lineitem WHERE l_quantity > 30 GROUP BY l_partkey ORDER BY l_partkey;
-SELECT l_partkey, COUNT(*) FROM lineitem WHERE l_quantity > 5 GROUP BY l_partkey ORDER BY l_partkey;
-SELECT l_partkey, COUNT(*) FROM lineitem WHERE l_quantity > 5 GROUP BY l_partkey ORDER BY l_partkey;
-SELECT l_partkey, COUNT(*) FROM lineitem WHERE l_quantity > 30 GROUP BY l_partkey ORDER BY l_partkey;
-SELECT l_partkey, COUNT(*) FROM lineitem WHERE l_quantity > 10 GROUP BY l_partkey ORDER BY l_partkey;
-SELECT l_partkey, COUNT(*) FROM lineitem WHERE l_quantity > 35 GROUP BY l_partkey ORDER BY l_partkey;
-SELECT l_partkey, COUNT(*) FROM lineitem WHERE l_quantity > 15 GROUP BY l_partkey ORDER BY l_partkey;
-SELECT l_partkey, COUNT(*) FROM lineitem WHERE l_quantity > 5 GROUP BY l_partkey ORDER BY l_partkey;
-SELECT l_partkey, COUNT(*) FROM lineitem WHERE l_quantity > 35 GROUP BY l_partkey ORDER BY l_partkey;
-SELECT l_partkey, COUNT(*) FROM lineitem WHERE l_quantity > 10 GROUP BY l_partkey ORDER BY l_partkey;
-SELECT l_partkey, COUNT(*) FROM lineitem WHERE l_quantity > 35 GROUP BY l_partkey ORDER BY l_partkey;
-SELECT l_partkey, COUNT(*) FROM lineitem WHERE l_quantity > 5 GROUP BY l_partkey ORDER BY l_partkey;
-SELECT l_partkey, COUNT(*) FROM lineitem WHERE l_quantity > 20 GROUP BY l_partkey ORDER BY l_partkey;
-SELECT l_partkey, COUNT(*) FROM lineitem WHERE l_quantity > 15 GROUP BY l_partkey ORDER BY l_partkey;
-SELECT l_partkey, COUNT(*) FROM lineitem WHERE l_quantity > 20 GROUP BY l_partkey ORDER BY l_partkey;
-SELECT l_partkey, COUNT(*) FROM lineitem WHERE l_quantity > 30 GROUP BY l_partkey ORDER BY l_partkey;
-SELECT l_partkey, COUNT(*) FROM lineitem WHERE l_quantity > 35 GROUP BY l_partkey ORDER BY l_partkey;
-SELECT l_partkey, COUNT(*) FROM lineitem WHERE l_quantity > 15 GROUP BY l_partkey ORDER BY l_partkey;
-SELECT l_partkey, COUNT(*) FROM lineitem WHERE l_quantity > 10 GROUP BY l_partkey ORDER BY l_partkey;
-SELECT l_partkey, COUNT(*) FROM lineitem WHERE l_quantity > 15 GROUP BY l_partkey ORDER BY l_partkey;
-SELECT l_partkey, COUNT(*) FROM lineitem WHERE l_quantity > 15 GROUP BY l_partkey ORDER BY l_partkey;
-SELECT l_partkey, COUNT(*) FROM lineitem WHERE l_quantity > 10 GROUP BY l_partkey ORDER BY l_partkey;
-SELECT l_partkey, COUNT(*) FROM lineitem WHERE l_quantity > 30 GROUP BY l_partkey ORDER BY l_partkey;
-SELECT l_partkey, COUNT(*) FROM lineitem WHERE l_quantity > 15 GROUP BY l_partkey ORDER BY l_partkey;
-SELECT l_partkey, COUNT(*) FROM lineitem WHERE l_quantity > 30 GROUP BY l_partkey ORDER BY l_partkey;
-SELECT * FROM customer c JOIN orders o ON c.c_custkey = o.o_custkey WHERE c.c_nationkey = 20;
-SELECT * FROM customer c JOIN orders o ON c.c_custkey = o.o_custkey WHERE c.c_nationkey = 20;
-SELECT * FROM customer c JOIN orders o ON c.c_custkey = o.o_custkey WHERE c.c_nationkey = 1;
-SELECT * FROM customer c JOIN orders o ON c.c_custkey = o.o_custkey WHERE c.c_nationkey = 15;
-SELECT * FROM customer c JOIN orders o ON c.c_custkey = o.o_custkey WHERE c.c_nationkey = 20;
-SELECT * FROM customer c JOIN orders o ON c.c_custkey = o.o_custkey WHERE c.c_nationkey = 3;
-SELECT * FROM customer c JOIN orders o ON c.c_custkey = o.o_custkey WHERE c.c_nationkey = 15;
-SELECT * FROM customer c JOIN orders o ON c.c_custkey = o.o_custkey WHERE c.c_nationkey = 20;
-SELECT * FROM customer c JOIN orders o ON c.c_custkey = o.o_custkey WHERE c.c_nationkey = 3;
-SELECT * FROM customer c JOIN orders o ON c.c_custkey = o.o_custkey WHERE c.c_nationkey = 3;
-SELECT * FROM customer c JOIN orders o ON c.c_custkey = o.o_custkey WHERE c.c_nationkey = 10;
-SELECT * FROM customer c JOIN orders o ON c.c_custkey = o.o_custkey WHERE c.c_nationkey = 10;
-SELECT * FROM customer c JOIN orders o ON c.c_custkey = o.o_custkey WHERE c.c_nationkey = 5;
-SELECT * FROM customer c JOIN orders o ON c.c_custkey = o.o_custkey WHERE c.c_nationkey = 20;
-SELECT * FROM customer c JOIN orders o ON c.c_custkey = o.o_custkey WHERE c.c_nationkey = 20;
-SELECT * FROM customer c JOIN orders o ON c.c_custkey = o.o_custkey WHERE c.c_nationkey = 15;
-SELECT * FROM customer c JOIN orders o ON c.c_custkey = o.o_custkey WHERE c.c_nationkey = 3;
-SELECT * FROM customer c JOIN orders o ON c.c_custkey = o.o_custkey WHERE c.c_nationkey = 20;
-SELECT * FROM customer c JOIN orders o ON c.c_custkey = o.o_custkey WHERE c.c_nationkey = 5;
-SELECT * FROM customer c JOIN orders o ON c.c_custkey = o.o_custkey WHERE c.c_nationkey = 1;
+SELECT * FROM lineitem WHERE l_partkey = 1000;
+SELECT * FROM orders WHERE o_custkey = 500;
+SELECT * FROM customer WHERE c_custkey = 100;
+
+SELECT * FROM lineitem WHERE l_quantity > 20;
+SELECT * FROM orders WHERE o_totalprice > 100000;
+SELECT * FROM orders WHERE o_orderdate >= DATE '1995-01-01';
+
+SELECT * FROM orders
+WHERE o_custkey = 500 AND o_orderdate >= DATE '1995-01-01';
+
+SELECT * FROM lineitem
+WHERE l_partkey = 1000 AND l_quantity > 20;
+
+SELECT *
+FROM customer c
+JOIN orders o ON c.c_custkey = o.o_custkey
+WHERE c.c_custkey = 100;
+
+SELECT *
+FROM orders
+WHERE o_custkey = 500
+ORDER BY o_orderdate;
+
+SELECT l_partkey, COUNT(*)
+FROM lineitem
+WHERE l_quantity > 20
+GROUP BY l_partkey;

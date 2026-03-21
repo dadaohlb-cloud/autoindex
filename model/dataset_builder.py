@@ -333,7 +333,11 @@ def build_dataset(
     os.makedirs("output", exist_ok=True)
 
     queries = load_workload(workload_path)
-    parsed_queries = [parse_sql(q) for q in queries]
+    parsed_queries = []
+    for q in queries:
+        pq = parse_sql(q)
+        pq["raw_sql"] = q
+        parsed_queries.append(pq)
 
     candidate_result = generate_all_candidates(
         parsed_queries=parsed_queries,

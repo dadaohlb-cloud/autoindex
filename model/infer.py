@@ -169,7 +169,9 @@ def build_inference_rows(workload_path: str, freq_threshold: float = 0.1, max_wi
 
                 inf = build_index_feature(
                     candidate,
-                    fiting_model_size=(fiting_model_size if candidate["index_type"] == "fiting" else None)
+                    fiting_model_size=(fiting_model_size if candidate["index_type"] == "fiting" else None),
+                    conn=conn,
+                    parsed_query=parsed_query,
                 )
                 xf = build_interaction_feature(parsed_query, candidate)
                 merged = merge_features(qf, inf, xf)

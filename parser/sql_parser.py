@@ -16,10 +16,10 @@ def parse_sql(sql: str):
     order_cols = []
     group_cols = []
     select_cols = []
+
     has_select_star = False
     alias_to_table = {}
     column_to_tables = {}
-
     all_tables = []
 
     for table in tree.find_all(exp.Table):
@@ -38,15 +38,31 @@ def parse_sql(sql: str):
             real_table = alias_to_table.get(alias, alias)
             column_to_tables.setdefault(col_name, set()).add(real_table)
         else:
-            # 关键修复：单表查询时，未限定列直接归属该表
             if len(all_tables) == 1:
                 column_to_tables.setdefault(col_name, set()).add(all_tables[0])
 
         return col_name
 
+    # 修复：显式识别 SELECT * / t.*
     for node in tree.find_all(exp.Select):
-        for col in node.find_all(exp.Column):
-            select_cols.append(record_column(col))
+        for expr in node.expressions or []:
+            if isinstance(expr, exp.Star):
+                has_select_star = True
+                select_cols.append("*")
+                continue
+
+            has_star_inside = False
+            for sub in expr.walk():
+                if isinstance(sub, exp.Star):
+                    has_select_star = True
+                    has_star_inside = True
+                    select_cols.append("*")
+                    break
+            if has_star_inside:
+                continue
+
+            for col in expr.find_all(exp.Column):
+                select_cols.append(record_column(col))
 
     for node in tree.find_all(exp.Where):
         for col in node.find_all(exp.Column):
@@ -67,7 +83,6 @@ def parse_sql(sql: str):
             group_cols.append(record_column(col))
 
     sql_lower = " ".join(sql.lower().split())
-
     predicate_type = {
         "eq": "=" in sql and all(op not in sql for op in [">=", "<=", "<>", "!=", ">", "<"]),
         "range": any(op in sql_lower for op in [">", "<", ">=", "<=", " between "]),
@@ -80,6 +95,7 @@ def parse_sql(sql: str):
         "order_cols": sorted(set(order_cols)),
         "group_cols": sorted(set(group_cols)),
         "select_cols": sorted(set(select_cols)),
+        "select_star": has_select_star,
         "predicate_type": predicate_type,
         "alias_to_table": alias_to_table,
         "column_to_tables": {k: sorted(v) for k, v in column_to_tables.items()},
